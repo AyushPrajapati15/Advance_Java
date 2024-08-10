@@ -36,25 +36,19 @@ public class EmployeeDelete extends GenericServlet {
 			PreparedStatement ps = connection.prepareStatement(delete);
 			ps.setInt(1, id);
 
-			int res=ps.executeUpdate();
-			PrintWriter writer=response.getWriter();
+			int res = ps.executeUpdate();
+			PrintWriter writer = response.getWriter();
 			response.setContentType("text/html");
-			if(res!=0)
-			{
+			if (res != 0) {
 				writer.println("<center><h1>Employee deleted successfully...</h1></center>");
-			}
-			else
-			{
+			} else {
 				writer.println("<center><h1>Invalid empId</h1></center>");
 			}
-			
-			
-			
-			
+
 		} catch (SQLException e) {
 			System.out.println(e);
 		}
-		
+
 		System.out.println("Employee deleted");
 
 	}
