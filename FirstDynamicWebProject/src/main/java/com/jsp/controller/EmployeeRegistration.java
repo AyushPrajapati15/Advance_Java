@@ -11,7 +11,6 @@ import javax.servlet.GenericServlet;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 
-
 import javax.servlet.ServletResponse;
 
 public class EmployeeRegistration extends GenericServlet {
@@ -42,16 +41,15 @@ public class EmployeeRegistration extends GenericServlet {
 			ps.setDouble(2, salary);
 			ps.setInt(3, deptNo);
 			ps.setLong(4, mobileNo);
-			int res=ps.executeUpdate();
-			PrintWriter writer=response.getWriter(); //USED TO PRINT THE MESSAGE TO THE WEB PAGE BY USING writer.println STATEMENT 
-			response.setContentType("text/html");// USED TO CONVERT/FORMAT THE MESSAGE IN THE PRINTLN STATEMENT TO HTML FONT
-			if(res!=0)
-			{				
+			int res = ps.executeUpdate();
+			PrintWriter writer = response.getWriter(); // USED TO PRINT THE MESSAGE TO THE WEB PAGE BY USING
+														// writer.println STATEMENT
+			response.setContentType("text/html");// USED TO CONVERT/FORMAT THE MESSAGE IN THE PRINTLN STATEMENT TO HTML
+													// FONT
+			if (res != 0) {
 				writer.println("<center><h1>Employee Registration Successful...</h1></center>");
-			}
-			else
-			{
-				writer.println("<center><h1>Invalid reques</h1></center>t");				
+			} else {
+				writer.println("<center><h1>Invalid reques</h1></center>t");
 			}
 		} catch (SQLException e) {
 
